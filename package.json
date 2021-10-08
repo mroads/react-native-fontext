@@ -1,0 +1,27 @@
+{
+  "name": "react-native-fontext",
+  "version": "0.0.1",
+  "description": "React Native package for custom fonts",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mroads/react-native-fontext.git"
+  },
+  "keywords": [
+    "react",
+    "native",
+    "font",
+    "text",
+    "custom",
+    "fonts"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mroads/react-native-fontext/issues"
+  },
+  "homepage": "https://github.com/mroads/react-native-fontext#readme"
+}
