@@ -31,10 +31,12 @@ function Text({
   const combinedStyle = StyleSheet.flatten(style) || {};
   let fontFamily = combinedStyle.fontFamily;
   let fontWeight = combinedStyle.fontWeight;
-  if (fontFamily && computeFont && typeof computeFont === 'function') {
-    fontFamily = computeFont(fontFamily, fontWeight);
-  } else {
-    fontFamily = computeFontDefault(fontFamily, fontWeight);
+  if (fontFamily) {
+    if (computeFont && typeof computeFont === 'function') {
+      fontFamily = computeFont(fontFamily, fontWeight);
+    } else {
+      fontFamily = computeFontDefault(fontFamily, fontWeight);
+    }
   }
 
   return Component ? (
