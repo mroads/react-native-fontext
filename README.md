@@ -5,6 +5,7 @@
 <p align="center">
   <img src="./assets/images/fontext-font-change.gif" width="260">
 </p>
+
 # Setup
 
 ### Installation
