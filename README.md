@@ -3,7 +3,7 @@
 **react-native-fontext** is a lightweight library to integrate fonts in your React Native application that works seamlessly in android and iOS devices.
 
 <p align="center">
-  <img src="./assets/images/fontext-font-change.gif" width="260">
+  <img src="https://raw.githubusercontent.com/mroads/react-native-fontext/master/assets/images/fontext-font-change.gif" width="260">
 </p>
 
 # Setup
@@ -105,7 +105,7 @@ export default App;
 ### Example: Using a Component prop
 
 <p align="center">
-  <img src="./assets/images/fontext-buttonclick.gif" width="260">
+  <img src="https://raw.githubusercontent.com/mroads/react-native-fontext/master/assets/images/fontext-buttonclick.gif" width="260">
 </p>
 
 ```js
