@@ -42,13 +42,13 @@
     "lightweight",
     "simple"
   ],
-  "repository": "https://github.com/react-native-fontext",
+  "repository": "https://github.com/mroads/react-native-fontext",
   "author": "Vijay-mRoads <vijay@mroads.com> (https://github.com/Vijay-mRoads)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/react-native-fontext/issues"
+    "url": "https://github.com/mroads/react-native-fontext/issues"
   },
-  "homepage": "https://github.com/react-native-fontext#readme",
+  "homepage": "https://github.com/mroads/react-native-fontext#readme",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
