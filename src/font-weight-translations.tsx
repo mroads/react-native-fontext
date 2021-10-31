@@ -1,8 +1,8 @@
-interface Map {
-  [key: string]: string | undefined;
-}
+import type { TextStyle } from 'react-native';
 
-const FontWeightTranslations: Map = {
+type FontWeight = Exclude<TextStyle['fontWeight'], void>;
+
+const FontWeightTranslations: Record<FontWeight, string> = {
   '100': 'Thin',
   '200': 'ExtraLight',
   '300': 'Light',

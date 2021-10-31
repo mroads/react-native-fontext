@@ -1,52 +1,40 @@
-// export function multiply(a: number, b: number): Promise<number> {
-//   return Promise.resolve(a * b);
-// }
-
-import React from 'react';
-import { StyleSheet, TextProps, Text as RNText } from 'react-native';
+import React, { ReactNode } from 'react';
+import { StyleSheet, TextProps, Text as RNText, TextStyle } from 'react-native';
 import FontWeightTranslations from './font-weight-translations';
 
 export function computeFontDefault(
-  fontFamily: string | undefined,
-  fontWeight: string = 'normal'
+  fontFamily: string,
+  fontWeight: TextStyle['fontWeight'] = 'normal'
 ): string {
-  let prepareFontFamily = '';
-  if (fontFamily) {
-    prepareFontFamily = fontFamily + '-' + FontWeightTranslations[fontWeight];
-  }
-  return prepareFontFamily;
+  return fontFamily + '-' + FontWeightTranslations[fontWeight];
 }
 
 interface CustomProps extends TextProps {
-  component: React.FC<TextProps>;
-  computeFont: Function;
+  children?: ReactNode;
+  component?: React.ComponentType<TextProps>;
+  computeFont?: (
+    fontFamily: string,
+    fontWeight?: TextStyle['fontWeight']
+  ) => string;
 }
 
 function Text({
   style,
-  component: Component,
-  computeFont,
+  component: Component = RNText,
+  computeFont = computeFontDefault,
   ...props
 }: CustomProps) {
-  const combinedStyle = StyleSheet.flatten(style) || {};
-  let fontFamily = combinedStyle.fontFamily;
-  let fontWeight = combinedStyle.fontWeight;
+  let { fontFamily, fontWeight } = StyleSheet.flatten(style) || {};
+
   if (fontFamily) {
-    if (computeFont && typeof computeFont === 'function') {
-      fontFamily = computeFont(fontFamily, fontWeight);
-    } else {
-      fontFamily = computeFontDefault(fontFamily, fontWeight);
-    }
+    fontFamily =
+      computeFont?.(fontFamily, fontWeight) ??
+      computeFontDefault(fontFamily, fontWeight);
   }
 
-  return Component ? (
+  return (
     <Component
-      style={{ ...combinedStyle, fontFamily, fontWeight: undefined }}
-      {...props}
-    />
-  ) : (
-    <RNText
-      style={{ ...combinedStyle, fontFamily, fontWeight: undefined }}
+      style={[style, { fontFamily, fontWeight: undefined }]}
       {...props}
     />
   );
