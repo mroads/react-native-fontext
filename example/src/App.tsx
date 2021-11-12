@@ -1,23 +1,52 @@
-import * as React from 'react';
+import React from 'react';
 
-import { StyleSheet, View, Text } from 'react-native';
-import { multiply } from 'react-native-fontext';
+import { StyleSheet, View } from 'react-native';
+import Text from 'react-native-fontext';
 
 export default function App() {
-  const [result, setResult] = React.useState<number | undefined>();
-
-  React.useEffect(() => {
-    multiply(3, 7).then(setResult);
-  }, []);
-
   return (
     <View style={styles.container}>
-      <Text>Result: {result}</Text>
+      <Text style={styles.thin}>Noto Sans Mono thin</Text>
+      <Text style={styles.medium}>Noto Sans Mono medium</Text>
+      <Text style={styles.regular}>Noto Sans Mono regular</Text>
+      <Text style={styles.extraLight}>Noto Sans Mono extra light</Text>
+      <Text style={styles.extraBold}>Noto Sans Mono extra bold</Text>
+      <Text style={styles.bolt}>Noto Sans Mono bolt</Text>
+      <Text style={styles.black}>Noto Sans Mono black</Text>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
+  thin: {
+    fontFamily: 'NotoSansMono',
+    fontWeight: '100',
+  },
+  medium: {
+    fontFamily: 'NotoSansMono',
+    fontWeight: '500',
+  },
+  regular: {
+    fontFamily: 'NotoSansMono',
+    fontWeight: '400',
+  },
+  extraLight: {
+    fontFamily: 'NotoSansMono',
+    fontWeight: '200',
+  },
+  extraBold: {
+    fontFamily: 'NotoSansMono',
+    fontWeight: '800',
+  },
+  bolt: {
+    fontFamily: 'NotoSansMono',
+    fontWeight: '700',
+  },
+  black: {
+    fontFamily: 'NotoSansMono',
+    fontWeight: '900',
+  },
+
   container: {
     flex: 1,
     alignItems: 'center',
